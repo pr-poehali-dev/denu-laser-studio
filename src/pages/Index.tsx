@@ -206,7 +206,7 @@ export default function Index() {
             </div>
             <div className="relative">
               <div className="rounded-[2.5rem] overflow-hidden shadow-xl aspect-square">
-                <img src="https://cdn.poehali.dev/projects/240a6363-8506-4999-a5c6-fa3c28c59bb8/bucket/f8b4fa36-18a9-4498-9c03-6981e859c896.JPG" alt="Кабинет DENU" className="w-full h-full object-cover" />
+                <img src="https://cdn.poehali.dev/projects/240a6363-8506-4999-a5c6-fa3c28c59bb8/bucket/99bbdcb0-2a50-4f97-b31d-c81f75bf9be2.JPG" alt="Кабинет DENU" className="w-full h-full object-cover" />
               </div>
               <div className="absolute -bottom-6 -right-6 w-32 h-32 rounded-[2rem] gradient-mint opacity-70 animate-float-delay" />
               <div className="absolute -top-6 -left-6 w-20 h-20 rounded-2xl bg-denu-pink-light border-4 border-white shadow-lg flex items-center justify-center text-3xl">🩷</div>
