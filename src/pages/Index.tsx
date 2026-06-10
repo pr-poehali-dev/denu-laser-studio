@@ -42,10 +42,7 @@ const team = [
 const perks = [
   { icon: "🎁", title: "Маска Darling", desc: "Дарим розовую маску Darling за первый визит" },
   { icon: "🥤", title: "Лимонад DENU Fizz", desc: "Освежающий лимонад в подарок после каждой процедуры" },
-  { icon: "🩷", title: "Розовые конфетки", desc: "Большая ваза с розовыми фрутти на ресепшн — угощайтесь!" },
-  { icon: "😎", title: "Розовые очки", desc: "Наши фирменные очки для защиты глаз — стильно и безопасно" },
-  { icon: "💄", title: "Ретейл косметики Pusy", desc: "Зона с крутой уходовой косметикой прямо в студии" },
-  { icon: "📸", title: "Фотозона", desc: "Дофаминовый интерьер — идеальный фон для сторис" },
+  { icon: "💎", title: "Бьютисы", desc: "Собирай уровни и получай плюшки от студии" },
 ];
 
 const reviews = [
@@ -122,7 +119,7 @@ export default function Index() {
           <div className="animate-fade-up">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-denu-pink-light border border-denu-pink/20 mb-6">
               <span className="text-sm">📍</span>
-              <span className="text-sm font-medium text-denu-pink">Рязань, центр города</span>
+              <span className="text-sm font-medium text-denu-pink">Рязань, пл. Ленина</span>
             </div>
             <h1 className="font-display text-5xl md:text-7xl leading-[1.05] font-semibold mb-6 text-denu-dark">
               Лазерная<br />
@@ -199,7 +196,7 @@ export default function Index() {
                 Розовый ресепшн из шариков, мятные акценты, освежающий лимонад, конфетки фрутти — мы создали место, куда хочется возвращаться. А ещё тут реально перестаёшь думать о бритве навсегда 🙂
               </p>
               <div className="grid grid-cols-2 gap-4">
-                {[{ num: "3+", label: "года на рынке" }, { num: "1000+", label: "довольных клиентов" }, { num: "6–8", label: "сеансов до результата" }, { num: "100%", label: "мед. образование" }].map((s) => (
+                {[{ num: "😌", label: "Не больно" }, { num: "🪒", label: "Забудь о бритве" }, { num: "6–8", label: "сеансов до результата" }, { num: "100%", label: "мед. образование" }].map((s) => (
                   <div key={s.label} className="bg-white rounded-2xl p-4 border border-denu-pink/10">
                     <p className="font-display text-3xl font-semibold text-denu-pink">{s.num}</p>
                     <p className="text-sm text-denu-dark/60 mt-1">{s.label}</p>
@@ -276,26 +273,24 @@ export default function Index() {
       </section>
 
       {/* ATMOSPHERE */}
-      <section id="atmosphere" className="section-padding" style={{ background: "var(--denu-dark)" }}>
+      <section id="atmosphere" className="section-padding bg-denu-pink-light/50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <p className="text-denu-pink font-semibold text-sm uppercase tracking-widest mb-3">Атмосфера</p>
-            <h2 className="font-display text-4xl md:text-5xl font-semibold text-white">Дофаминовый<br /><em className="not-italic text-denu-pink">интерьер</em></h2>
-            <p className="text-white/40 mt-3 text-lg">Каждая деталь создана для удовольствия</p>
+            <h2 className="font-display text-4xl md:text-5xl font-semibold text-denu-dark">Дофаминовый<br /><em className="not-italic text-denu-pink">интерьер</em></h2>
+            <p className="text-denu-dark/50 mt-3 text-lg">Каждая деталь создана для удовольствия</p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
             {[
               { emoji: "🎈", title: "Ресепшн из розовых шариков", desc: "Атмосфера праздника с первого шага" },
-              { emoji: "🚽", title: "Полностью розовый туалет", desc: "Даже ванная — часть арт-объекта" },
-              { emoji: "🌸", title: "Розовые очки", desc: "Стильная защита во время процедуры" },
-              { emoji: "🍬", title: "Конфетки фрутти", desc: "Большая ваза у ресепшн — угощайтесь" },
               { emoji: "🤳", title: "Инстаграмные раздевалки", desc: "Раздевалки созданы для крутых фото и сторис" },
+              { emoji: "🍬", title: "Конфетки фрутти", desc: "Большая ваза у ресепшн — угощайтесь" },
               { emoji: "✨", title: "Фотозона", desc: "Идеальный фон для твоих сторис" },
             ].map((item) => (
-              <div key={item.title} className="rounded-2xl p-5 border border-white/5 bg-white/5 hover:bg-white/10 transition-colors">
-                <p className="text-3xl mb-3">{item.emoji}</p>
-                <p className="font-semibold text-white text-sm mb-1">{item.title}</p>
-                <p className="text-white/40 text-xs leading-relaxed">{item.desc}</p>
+              <div key={item.title} className="rounded-2xl p-6 bg-white border border-denu-pink/15 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
+                <p className="text-4xl mb-4">{item.emoji}</p>
+                <p className="font-semibold text-denu-dark text-sm mb-1">{item.title}</p>
+                <p className="text-denu-dark/50 text-xs leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
