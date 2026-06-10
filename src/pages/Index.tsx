@@ -196,7 +196,7 @@ export default function Index() {
                 Розовый ресепшн из шариков, мятные акценты, освежающий лимонад, конфетки фрутти — мы создали место, куда хочется возвращаться. А ещё тут реально перестаёшь думать о бритве навсегда 🙂
               </p>
               <div className="grid grid-cols-2 gap-4">
-                {[{ num: "6–8", label: "сеансов до результата" }, { num: "100%", label: "мед. образование" }].map((s) => (
+                {[{ num: "8–10", label: "сеансов до результата" }, { num: "100%", label: "мед. образование" }].map((s) => (
                   <div key={s.label} className="bg-white rounded-2xl p-4 border border-denu-pink/10">
                     <p className="font-display text-3xl font-semibold text-denu-pink">{s.num}</p>
                     <p className="text-sm text-denu-dark/60 mt-1">{s.label}</p>
@@ -215,28 +215,57 @@ export default function Index() {
         </div>
       </section>
 
-      {/* SERVICES */}
-      <section id="services" className="section-padding bg-denu-pink-light/40">
-        <div className="max-w-7xl mx-auto">
+      {/* PRICE */}
+      <section id="price" className="section-padding bg-denu-mint-light/60">
+        <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <p className="text-denu-pink font-semibold text-sm uppercase tracking-widest mb-3">Услуги</p>
-            <h2 className="font-display text-4xl md:text-5xl font-semibold text-denu-dark">Зоны эпиляции</h2>
-            <p className="text-denu-dark/50 mt-3 text-lg">Диодный лазер · Охлаждение · Безопасно</p>
+            <p className="text-denu-mint-deep font-semibold text-sm uppercase tracking-widest mb-3">Прайс</p>
+            <h2 className="font-display text-4xl md:text-5xl font-semibold text-denu-dark">Стоимость</h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-            {servicesZones.map((s) => (
-              <div key={s.zone} className={`relative rounded-2xl p-5 border transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 ${s.popular ? "gradient-pink border-transparent shadow-lg" : "bg-white border-denu-pink/10"}`}>
-                {s.popular && <span className="absolute -top-2.5 left-4 text-xs font-semibold bg-white text-denu-pink rounded-full px-3 py-0.5 shadow">Популярно</span>}
-                <p className={`font-semibold text-base mb-3 ${s.popular ? "text-white" : "text-denu-dark"}`}>{s.zone}</p>
-                <p className={`font-display text-2xl font-semibold ${s.popular ? "text-white" : "text-denu-pink"}`}>{s.price}</p>
-              </div>
-            ))}
-          </div>
-          <div className="text-center">
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-white gradient-pink hover:opacity-90 transition-opacity shadow-lg">
-              Записаться онлайн <Icon name="ArrowRight" size={18} />
+          <div className="gradient-pink rounded-3xl p-8 text-white text-center mb-8 shadow-xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-white/10 -translate-y-1/2 translate-x-1/2" />
+            <p className="text-white/70 font-semibold text-sm uppercase tracking-widest mb-2">Специальное предложение</p>
+            <h3 className="font-display text-3xl md:text-4xl font-semibold mb-2">Подмышки + маска Darling</h3>
+            <p className="text-white/70 mb-4">Только для новых клиентов · Первый визит</p>
+            <p className="font-display text-6xl font-semibold mb-6">490 ₽</p>
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold bg-white text-denu-pink hover:bg-denu-pink-light transition-colors shadow-md">
+              Записаться на акцию <Icon name="ArrowRight" size={18} />
             </a>
           </div>
+          <div className="bg-white rounded-3xl border border-denu-mint/20 overflow-hidden shadow-sm mb-5">
+            <div className="px-5 pt-5 pb-2">
+              <p className="font-display text-xl font-semibold text-denu-dark mb-1">Отдельные зоны</p>
+            </div>
+            <table className="w-full">
+              <tbody>
+                {servicesZones.map((s) => (
+                  <tr key={s.zone} className={`border-b border-denu-mint/5 last:border-0 hover:bg-denu-pink-light/20 transition-colors ${s.popular ? "bg-denu-pink-light/30" : ""}`}>
+                    <td className="p-4 md:p-5 font-medium text-denu-dark flex items-center gap-2">
+                      {s.popular && <span className="text-xs font-semibold text-denu-pink bg-denu-pink-light rounded-full px-2 py-0.5">хит</span>}
+                      {s.zone}
+                    </td>
+                    <td className="p-4 md:p-5 text-right font-display font-semibold text-lg text-denu-pink">{s.price}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="bg-white rounded-3xl border border-denu-mint/20 overflow-hidden shadow-sm">
+            <div className="px-5 pt-5 pb-2">
+              <p className="font-display text-xl font-semibold text-denu-dark mb-1">Сеты</p>
+            </div>
+            <table className="w-full">
+              <tbody>
+                {servicesSets.map((s) => (
+                  <tr key={s.zone} className="border-b border-denu-mint/5 last:border-0 hover:bg-denu-mint-light/30 transition-colors">
+                    <td className="p-4 md:p-5 font-medium text-denu-dark">{s.zone}</td>
+                    <td className="p-4 md:p-5 text-right font-display font-semibold text-lg text-denu-pink whitespace-nowrap">{s.price}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-center text-denu-dark/40 text-sm mt-4">* Цены указаны за один сеанс.</p>
         </div>
       </section>
 
@@ -249,14 +278,6 @@ export default function Index() {
             <p className="text-denu-dark/50 mt-3 text-lg">Медицинское образование · Постоянное обучение</p>
           </div>
 
-          {/* Mint teasers */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            {["Безопасно", "Не больно", "Результативно"].map((label) => (
-              <div key={label} className="flex-1 max-w-xs mx-auto sm:mx-0 rounded-2xl px-8 py-5 text-center" style={{ background: "var(--denu-mint-light)", border: "2px solid var(--denu-mint)" }}>
-                <p className="font-display text-2xl md:text-3xl font-semibold" style={{ color: "var(--denu-mint-deep)" }}>{label}</p>
-              </div>
-            ))}
-          </div>
           <div className="grid sm:grid-cols-2 max-w-2xl mx-auto gap-6">
             {team.map((m) => (
               <div key={m.name} className="group bg-white rounded-3xl overflow-hidden border border-denu-pink/10 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
@@ -323,60 +344,6 @@ export default function Index() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* PRICE */}
-      <section id="price" className="section-padding bg-denu-mint-light/60">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <p className="text-denu-mint-deep font-semibold text-sm uppercase tracking-widest mb-3">Прайс</p>
-            <h2 className="font-display text-4xl md:text-5xl font-semibold text-denu-dark">Стоимость</h2>
-          </div>
-          <div className="gradient-pink rounded-3xl p-8 text-white text-center mb-8 shadow-xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-white/10 -translate-y-1/2 translate-x-1/2" />
-            <p className="text-white/70 font-semibold text-sm uppercase tracking-widest mb-2">Специальное предложение</p>
-            <h3 className="font-display text-3xl md:text-4xl font-semibold mb-2">Подмышки + маска Darling</h3>
-            <p className="text-white/70 mb-4">Только для новых клиентов · Первый визит</p>
-            <p className="font-display text-6xl font-semibold mb-6">490 ₽</p>
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold bg-white text-denu-pink hover:bg-denu-pink-light transition-colors shadow-md">
-              Записаться на акцию <Icon name="ArrowRight" size={18} />
-            </a>
-          </div>
-          <div className="bg-white rounded-3xl border border-denu-mint/20 overflow-hidden shadow-sm mb-5">
-            <div className="px-5 pt-5 pb-2">
-              <p className="font-display text-xl font-semibold text-denu-dark mb-1">Отдельные зоны</p>
-            </div>
-            <table className="w-full">
-              <tbody>
-                {servicesZones.map((s, i) => (
-                  <tr key={s.zone} className={`border-b border-denu-mint/5 last:border-0 hover:bg-denu-pink-light/20 transition-colors ${s.popular ? "bg-denu-pink-light/30" : ""}`}>
-                    <td className="p-4 md:p-5 font-medium text-denu-dark flex items-center gap-2">
-                      {s.popular && <span className="text-xs font-semibold text-denu-pink bg-denu-pink-light rounded-full px-2 py-0.5">хит</span>}
-                      {s.zone}
-                    </td>
-                    <td className="p-4 md:p-5 text-right font-display font-semibold text-lg text-denu-pink">{s.price}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <div className="bg-white rounded-3xl border border-denu-mint/20 overflow-hidden shadow-sm">
-            <div className="px-5 pt-5 pb-2">
-              <p className="font-display text-xl font-semibold text-denu-dark mb-1">Сеты</p>
-            </div>
-            <table className="w-full">
-              <tbody>
-                {servicesSets.map((s) => (
-                  <tr key={s.zone} className="border-b border-denu-mint/5 last:border-0 hover:bg-denu-mint-light/30 transition-colors">
-                    <td className="p-4 md:p-5 font-medium text-denu-dark">{s.zone}</td>
-                    <td className="p-4 md:p-5 text-right font-display font-semibold text-lg text-denu-pink whitespace-nowrap">{s.price}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <p className="text-center text-denu-dark/40 text-sm mt-4">* Цены указаны за один сеанс.</p>
         </div>
       </section>
 
