@@ -245,19 +245,23 @@ export default function Index() {
             <h2 className="font-display text-4xl md:text-5xl font-semibold text-denu-dark">Наши мастера</h2>
             <p className="text-denu-dark/50 mt-3 text-lg">Медицинское образование · Постоянное обучение</p>
           </div>
-          <div className="grid sm:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 max-w-2xl mx-auto gap-6">
             {team.map((m) => (
-              <div key={m.name} className="group bg-white rounded-3xl p-8 border border-denu-pink/10 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div className="w-20 h-20 rounded-full bg-denu-pink-light flex items-center justify-center text-4xl mx-auto mb-5 group-hover:scale-110 transition-transform">{m.emoji}</div>
-                <h3 className="font-display text-2xl font-semibold text-denu-dark mb-1">{m.name}</h3>
-                <p className="text-denu-pink text-sm font-semibold mb-3">{m.role}</p>
-                <div className="flex flex-col gap-2">
-                  <span className="inline-flex items-center justify-center gap-1.5 text-xs text-denu-dark/60 bg-denu-pink-light rounded-full px-3 py-1">
-                    <Icon name="Clock" size={12} />{m.exp}
-                  </span>
-                  <span className="inline-flex items-center justify-center gap-1.5 text-xs text-denu-mint-deep bg-denu-mint-light rounded-full px-3 py-1">
-                    <Icon name="GraduationCap" size={12} />{m.edu}
-                  </span>
+              <div key={m.name} className="group bg-white rounded-3xl overflow-hidden border border-denu-pink/10 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div className="w-full aspect-[3/4] overflow-hidden">
+                  <img src={m.photo} alt={m.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                </div>
+                <div className="p-6">
+                  <h3 className="font-display text-2xl font-semibold text-denu-dark mb-1">{m.name}</h3>
+                  <p className="text-denu-pink text-sm font-semibold mb-3">{m.role}</p>
+                  <div className="flex flex-col gap-2">
+                    <span className="inline-flex items-center justify-center gap-1.5 text-xs text-denu-dark/60 bg-denu-pink-light rounded-full px-3 py-1">
+                      <Icon name="Clock" size={12} />{m.exp}
+                    </span>
+                    <span className="inline-flex items-center justify-center gap-1.5 text-xs text-denu-mint-deep bg-denu-mint-light rounded-full px-3 py-1">
+                      <Icon name="GraduationCap" size={12} />{m.edu}
+                    </span>
+                  </div>
                 </div>
               </div>
             ))}
@@ -279,7 +283,7 @@ export default function Index() {
               { emoji: "🚽", title: "Полностью розовый туалет", desc: "Даже ванная — часть арт-объекта" },
               { emoji: "🌸", title: "Розовые очки", desc: "Стильная защита во время процедуры" },
               { emoji: "🍬", title: "Конфетки фрутти", desc: "Большая ваза у ресепшн — угощайтесь" },
-              { emoji: "🌿", title: "Мятные акценты", desc: "Свежий цвет как противовес розовому" },
+              { emoji: "🤳", title: "Инстаграмные раздевалки", desc: "Раздевалки созданы для крутых фото и сторис" },
               { emoji: "✨", title: "Фотозона", desc: "Идеальный фон для твоих сторис" },
             ].map((item) => (
               <div key={item.title} className="rounded-2xl p-5 border border-white/5 bg-white/5 hover:bg-white/10 transition-colors">
@@ -329,27 +333,40 @@ export default function Index() {
               Записаться на акцию <Icon name="ArrowRight" size={18} />
             </a>
           </div>
-          <div className="bg-white rounded-3xl border border-denu-mint/20 overflow-hidden shadow-sm">
+          <div className="bg-white rounded-3xl border border-denu-mint/20 overflow-hidden shadow-sm mb-5">
+            <div className="px-5 pt-5 pb-2">
+              <p className="font-display text-xl font-semibold text-denu-dark mb-1">Отдельные зоны</p>
+            </div>
             <table className="w-full">
-              <thead>
-                <tr className="border-b border-denu-mint/10">
-                  <th className="text-left p-4 md:p-5 text-sm font-semibold text-denu-dark/60">Зона</th>
-                  <th className="text-center p-4 md:p-5 text-sm font-semibold text-denu-dark/60">Время</th>
-                  <th className="text-right p-4 md:p-5 text-sm font-semibold text-denu-dark/60">Цена</th>
-                </tr>
-              </thead>
               <tbody>
-                {services.map((s, i) => (
-                  <tr key={s.zone} className={`border-b border-denu-mint/5 last:border-0 hover:bg-denu-mint-light/30 transition-colors ${i % 2 === 0 ? "" : "bg-denu-cream/30"}`}>
-                    <td className="p-4 md:p-5 font-medium text-denu-dark">{s.zone}</td>
-                    <td className="p-4 md:p-5 text-center text-denu-dark/50 text-sm">{s.time}</td>
+                {servicesZones.map((s, i) => (
+                  <tr key={s.zone} className={`border-b border-denu-mint/5 last:border-0 hover:bg-denu-pink-light/20 transition-colors ${s.popular ? "bg-denu-pink-light/30" : ""}`}>
+                    <td className="p-4 md:p-5 font-medium text-denu-dark flex items-center gap-2">
+                      {s.popular && <span className="text-xs font-semibold text-denu-pink bg-denu-pink-light rounded-full px-2 py-0.5">хит</span>}
+                      {s.zone}
+                    </td>
                     <td className="p-4 md:p-5 text-right font-display font-semibold text-lg text-denu-pink">{s.price}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <p className="text-center text-denu-dark/40 text-sm mt-4">* Цены указаны за один сеанс. Уточняйте стоимость пакетов при записи.</p>
+          <div className="bg-white rounded-3xl border border-denu-mint/20 overflow-hidden shadow-sm">
+            <div className="px-5 pt-5 pb-2">
+              <p className="font-display text-xl font-semibold text-denu-dark mb-1">Сеты</p>
+            </div>
+            <table className="w-full">
+              <tbody>
+                {servicesSets.map((s) => (
+                  <tr key={s.zone} className="border-b border-denu-mint/5 last:border-0 hover:bg-denu-mint-light/30 transition-colors">
+                    <td className="p-4 md:p-5 font-medium text-denu-dark">{s.zone}</td>
+                    <td className="p-4 md:p-5 text-right font-display font-semibold text-lg text-denu-pink whitespace-nowrap">{s.price}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-center text-denu-dark/40 text-sm mt-4">* Цены указаны за один сеанс.</p>
         </div>
       </section>
 
@@ -359,7 +376,6 @@ export default function Index() {
           <div className="text-center mb-12">
             <p className="text-denu-pink font-semibold text-sm uppercase tracking-widest mb-3">Отзывы</p>
             <h2 className="font-display text-4xl md:text-5xl font-semibold text-denu-dark">Что говорят клиенты</h2>
-            <p className="text-denu-dark/50 mt-3">За отзыв — маска Darling в подарок 🩷</p>
           </div>
           <div className="grid sm:grid-cols-2 gap-5">
             {reviews.map((r) => (
