@@ -227,11 +227,10 @@ export default function Index() {
             <p className="text-denu-dark/50 mt-3 text-lg">Диодный лазер · Охлаждение · Безопасно</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-            {services.map((s) => (
+            {servicesZones.map((s) => (
               <div key={s.zone} className={`relative rounded-2xl p-5 border transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 ${s.popular ? "gradient-pink border-transparent shadow-lg" : "bg-white border-denu-pink/10"}`}>
                 {s.popular && <span className="absolute -top-2.5 left-4 text-xs font-semibold bg-white text-denu-pink rounded-full px-3 py-0.5 shadow">Популярно</span>}
-                <p className={`font-semibold text-base mb-1 ${s.popular ? "text-white" : "text-denu-dark"}`}>{s.zone}</p>
-                <p className={`text-sm mb-3 ${s.popular ? "text-white/80" : "text-denu-dark/50"}`}>{s.time}</p>
+                <p className={`font-semibold text-base mb-3 ${s.popular ? "text-white" : "text-denu-dark"}`}>{s.zone}</p>
                 <p className={`font-display text-2xl font-semibold ${s.popular ? "text-white" : "text-denu-pink"}`}>{s.price}</p>
               </div>
             ))}
