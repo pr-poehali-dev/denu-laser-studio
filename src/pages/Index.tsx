@@ -196,7 +196,7 @@ export default function Index() {
                 Розовый ресепшн из шариков, мятные акценты, освежающий лимонад, конфетки фрутти — мы создали место, куда хочется возвращаться. А ещё тут реально перестаёшь думать о бритве навсегда 🙂
               </p>
               <div className="grid grid-cols-2 gap-4">
-                {[{ num: "😌", label: "Не больно" }, { num: "🪒", label: "Забудь о бритве" }, { num: "6–8", label: "сеансов до результата" }, { num: "100%", label: "мед. образование" }].map((s) => (
+                {[{ num: "6–8", label: "сеансов до результата" }, { num: "100%", label: "мед. образование" }].map((s) => (
                   <div key={s.label} className="bg-white rounded-2xl p-4 border border-denu-pink/10">
                     <p className="font-display text-3xl font-semibold text-denu-pink">{s.num}</p>
                     <p className="text-sm text-denu-dark/60 mt-1">{s.label}</p>
@@ -247,6 +247,15 @@ export default function Index() {
             <p className="text-denu-pink font-semibold text-sm uppercase tracking-widest mb-3">Специалисты</p>
             <h2 className="font-display text-4xl md:text-5xl font-semibold text-denu-dark">Наши мастера</h2>
             <p className="text-denu-dark/50 mt-3 text-lg">Медицинское образование · Постоянное обучение</p>
+          </div>
+
+          {/* Mint teasers */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            {["Безопасно", "Не больно", "Результативно"].map((label) => (
+              <div key={label} className="flex-1 max-w-xs mx-auto sm:mx-0 rounded-2xl px-8 py-5 text-center" style={{ background: "var(--denu-mint-light)", border: "2px solid var(--denu-mint)" }}>
+                <p className="font-display text-2xl md:text-3xl font-semibold" style={{ color: "var(--denu-mint-deep)" }}>{label}</p>
+              </div>
+            ))}
           </div>
           <div className="grid sm:grid-cols-2 max-w-2xl mx-auto gap-6">
             {team.map((m) => (
