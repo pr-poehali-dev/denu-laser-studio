@@ -7,6 +7,7 @@ export default {
 		"./components/**/*.{ts,tsx}",
 		"./app/**/*.{ts,tsx}",
 		"./src/**/*.{ts,tsx}",
+			"./1781094179438925608.html"
 	],
 	prefix: "",
 	theme: {
@@ -18,7 +19,20 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				display: ['Cormorant Garamond', 'serif'],
+				body: ['Golos Text', 'sans-serif'],
+			},
 			colors: {
+				'denu-pink': '#F06292',
+				'denu-pink-light': '#FCE4EC',
+				'denu-pink-soft': '#F8BBD9',
+				'denu-pink-deep': '#E91E8C',
+				'denu-mint': '#80CBC4',
+				'denu-mint-light': '#E0F2F1',
+				'denu-mint-deep': '#4DB6AC',
+				'denu-dark': '#2D1B2E',
+				'denu-cream': '#FFF9FB',
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
