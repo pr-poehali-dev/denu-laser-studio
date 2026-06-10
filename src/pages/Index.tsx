@@ -153,7 +153,7 @@ export default function Index() {
 
           <div className="relative hidden md:block">
             <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl aspect-[4/5]">
-              <img src="https://cdn.poehali.dev/projects/240a6363-8506-4999-a5c6-fa3c28c59bb8/files/d0429e65-b04a-44c0-be30-a22a41c4b6ee.jpg" alt="Студия DENU" className="w-full h-full object-cover" />
+              <img src="https://cdn.poehali.dev/projects/240a6363-8506-4999-a5c6-fa3c28c59bb8/bucket/871173b3-5c74-4356-bb1b-11382e060de6.JPG" alt="Студия DENU" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-denu-pink/20 to-transparent" />
             </div>
             <div className="absolute -bottom-4 -left-6 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-3">
@@ -209,7 +209,7 @@ export default function Index() {
             </div>
             <div className="relative">
               <div className="rounded-[2.5rem] overflow-hidden shadow-xl aspect-square">
-                <img src="https://cdn.poehali.dev/projects/240a6363-8506-4999-a5c6-fa3c28c59bb8/files/8f9a790f-5772-4419-ac76-5fbc4c779b9e.jpg" alt="Кабинет DENU" className="w-full h-full object-cover" />
+                <img src="https://cdn.poehali.dev/projects/240a6363-8506-4999-a5c6-fa3c28c59bb8/bucket/f8b4fa36-18a9-4498-9c03-6981e859c896.JPG" alt="Кабинет DENU" className="w-full h-full object-cover" />
               </div>
               <div className="absolute -bottom-6 -right-6 w-32 h-32 rounded-[2rem] gradient-mint opacity-70 animate-float-delay" />
               <div className="absolute -top-6 -left-6 w-20 h-20 rounded-2xl bg-denu-pink-light border-4 border-white shadow-lg flex items-center justify-center text-3xl">🩷</div>
