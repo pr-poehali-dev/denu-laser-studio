@@ -37,8 +37,8 @@ const servicesSets = [
 ];
 
 const team = [
-  { name: "Екатерина", role: "Мастер эпиляции", exp: "3 года опыта", edu: "Мед. образование", photo: "https://cdn.poehali.dev/projects/240a6363-8506-4999-a5c6-fa3c28c59bb8/bucket/0b4a882c-d219-4575-98e2-bd0a613542e7.JPG" },
-  { name: "Василина", role: "Мастер эпиляции", exp: "2 года опыта", edu: "Мед. образование", photo: "https://cdn.poehali.dev/projects/240a6363-8506-4999-a5c6-fa3c28c59bb8/bucket/78a466ca-6660-40f2-a84c-a7a807fcd96f.JPG" },
+  { name: "Екатерина", role: "Мастер лазерной эпиляции", exp: "3 года опыта", edu: "Мед. образование", photo: "https://cdn.poehali.dev/projects/240a6363-8506-4999-a5c6-fa3c28c59bb8/bucket/0b4a882c-d219-4575-98e2-bd0a613542e7.JPG" },
+  { name: "Василина", role: "Мастер лазерной эпиляции", exp: "2 года опыта", edu: "Мед. образование", photo: "https://cdn.poehali.dev/projects/240a6363-8506-4999-a5c6-fa3c28c59bb8/bucket/78a466ca-6660-40f2-a84c-a7a807fcd96f.JPG" },
 ];
 
 const perks = [
@@ -237,6 +237,23 @@ export default function Index() {
           </div>
           <div className="bg-white rounded-3xl border border-denu-mint/20 overflow-hidden shadow-sm mb-5">
             <div className="px-4 sm:px-5 pt-4 sm:pt-5 pb-2">
+              <p className="font-display text-xl font-semibold text-denu-dark mb-1">Сеты</p>
+            </div>
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-[300px]">
+                <tbody>
+                  {servicesSets.map((s) => (
+                    <tr key={s.zone} className="border-b border-denu-mint/5 last:border-0 hover:bg-denu-mint-light/30 transition-colors">
+                      <td className="p-3 sm:p-4 md:p-5 font-medium text-denu-dark text-sm sm:text-base">{s.zone}</td>
+                      <td className="p-3 sm:p-4 md:p-5 text-right font-display font-semibold text-base sm:text-lg text-denu-pink whitespace-nowrap">{s.price}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div className="bg-white rounded-3xl border border-denu-mint/20 overflow-hidden shadow-sm">
+            <div className="px-4 sm:px-5 pt-4 sm:pt-5 pb-2">
               <p className="font-display text-xl font-semibold text-denu-dark mb-1">Отдельные зоны</p>
             </div>
             <div className="overflow-x-auto">
@@ -248,23 +265,6 @@ export default function Index() {
                         {s.popular && <span className="text-xs font-semibold text-denu-pink bg-denu-pink-light rounded-full px-2 py-0.5 shrink-0">хит</span>}
                         {s.zone}
                       </td>
-                      <td className="p-3 sm:p-4 md:p-5 text-right font-display font-semibold text-base sm:text-lg text-denu-pink whitespace-nowrap">{s.price}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div className="bg-white rounded-3xl border border-denu-mint/20 overflow-hidden shadow-sm">
-            <div className="px-4 sm:px-5 pt-4 sm:pt-5 pb-2">
-              <p className="font-display text-xl font-semibold text-denu-dark mb-1">Сеты</p>
-            </div>
-            <div className="overflow-x-auto">
-              <table className="w-full min-w-[300px]">
-                <tbody>
-                  {servicesSets.map((s) => (
-                    <tr key={s.zone} className="border-b border-denu-mint/5 last:border-0 hover:bg-denu-mint-light/30 transition-colors">
-                      <td className="p-3 sm:p-4 md:p-5 font-medium text-denu-dark text-sm sm:text-base">{s.zone}</td>
                       <td className="p-3 sm:p-4 md:p-5 text-right font-display font-semibold text-base sm:text-lg text-denu-pink whitespace-nowrap">{s.price}</td>
                     </tr>
                   ))}
@@ -379,35 +379,12 @@ export default function Index() {
             <p className="text-denu-pink font-semibold text-sm uppercase tracking-widest mb-3">Отзывы</p>
             <h2 className="font-display text-4xl md:text-5xl font-semibold text-denu-dark">Что говорят клиенты</h2>
           </div>
-          <div className="flex flex-col lg:flex-row gap-8 items-start">
-            <div className="w-full lg:w-auto shrink-0" style={{ width: undefined }}>
-              <div className="overflow-hidden rounded-2xl border border-denu-pink/10 shadow-sm w-full lg:w-[560px] h-[800px]">
-                <iframe
-                  style={{ width: "100%", height: "100%", border: "none", boxSizing: "border-box" }}
-                  src="https://yandex.ru/maps-reviews-widget/186239162108?comments"
-                  title="Отзывы на Яндекс Картах"
-                />
-              </div>
-            </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-5 flex-1">
-              {reviews.map((r) => (
-                <div key={r.name} className="bg-white rounded-2xl p-6 border border-denu-pink/10 hover:shadow-md transition-shadow">
-                  <div className="flex items-center gap-1 mb-4">
-                    {Array.from({ length: r.rating }).map((_, i) => (
-                      <span key={i} className="text-denu-pink text-base">★</span>
-                    ))}
-                  </div>
-                  <p className="text-denu-dark/70 leading-relaxed mb-5 text-sm">{r.text}</p>
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-full bg-denu-pink-light flex items-center justify-center text-sm font-semibold text-denu-pink">{r.name[0]}</div>
-                    <div>
-                      <p className="font-semibold text-denu-dark text-sm">{r.name}</p>
-                      <p className="text-xs text-denu-dark/40">{r.age}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div className="overflow-hidden rounded-2xl border border-denu-pink/10 shadow-sm w-full h-[800px]">
+            <iframe
+              style={{ width: "100%", height: "100%", border: "none", boxSizing: "border-box" }}
+              src="https://yandex.ru/maps-reviews-widget/186239162108?comments"
+              title="Отзывы на Яндекс Картах"
+            />
           </div>
         </div>
       </section>
