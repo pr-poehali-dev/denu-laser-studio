@@ -468,24 +468,6 @@ export default function Index() {
         </div>
       </section>
 
-      {/* CTA BOTTOM */}
-      <section className="section-padding gradient-pink">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="font-display text-3xl md:text-4xl font-semibold text-white mb-3">Запишись прямо сейчас</h2>
-          <p className="text-white/70 mb-8">Онлайн за пару кликов или напиши нам в Telegram — ответим быстро</p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold bg-white text-denu-pink text-base hover:bg-denu-pink-light transition-colors shadow-lg">
-              <Icon name="CalendarCheck" size={18} />
-              Онлайн-запись
-            </a>
-            <a href={TG_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold bg-white/10 border border-white/30 text-white text-base hover:bg-white/20 transition-colors">
-              <Icon name="Send" size={18} />
-              Написать в Telegram
-            </a>
-          </div>
-        </div>
-      </section>
-
       {/* FOOTER */}
       <footer className="py-6 px-4 border-t border-denu-pink/10 bg-white">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-denu-dark/40">
