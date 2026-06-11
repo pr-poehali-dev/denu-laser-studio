@@ -188,16 +188,16 @@ export default function Index() {
             <div>
               <p className="text-denu-pink font-semibold text-sm uppercase tracking-widest mb-3">О студии</p>
               <h2 className="font-display text-4xl md:text-5xl font-semibold text-denu-dark leading-tight mb-6">
-                Место, где<br />красота — это<br /><em className="not-italic text-denu-pink">кайф</em>
+                Первый раз?<br />Всё будет<br /><em className="not-italic text-denu-pink">хорошо</em>
               </h2>
               <p className="text-denu-dark/60 text-lg leading-relaxed mb-6">
-                DENU — это не просто студия лазерной эпиляции. Это дофаминовое пространство в центре Рязани, где каждая деталь продумана для твоего удовольствия и комфорта.
+                Мы знаем, что для многих это первый опыт. Поэтому наши мастера с медицинским образованием сначала отвечают на все вопросы, а потом — делают процедуру.
               </p>
               <p className="text-denu-dark/60 leading-relaxed mb-8">
-                Розовый ресепшн из шариков, мятные акценты, освежающий лимонад, конфетки фрутти — мы создали место, куда хочется возвращаться. А ещё тут реально перестаёшь думать о бритве навсегда 🙂
+                Диодный лазер с охлаждением — минимум ощущений, максимум результата. Ты уйдёшь с чёткими ответами: сколько сеансов нужно именно тебе и чего ожидать на каждом этапе.
               </p>
               <div className="grid grid-cols-2 gap-4">
-                {[{ num: "8–10", label: "сеансов до результата" }, { num: "100%", label: "мед. образование" }].map((s) => (
+                {[{ num: "≥ 90%", label: "клиентов возвращаются снова" }, { num: "100%", label: "мастера с мед. образованием" }].map((s) => (
                   <div key={s.label} className="bg-white rounded-2xl p-4 border border-denu-pink/10">
                     <p className="font-display text-3xl font-semibold text-denu-pink">{s.num}</p>
                     <p className="text-sm text-denu-dark/60 mt-1">{s.label}</p>
