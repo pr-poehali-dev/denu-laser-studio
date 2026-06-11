@@ -207,12 +207,12 @@ export default function Index() {
                 ))}
               </div>
             </div>
-            <div className="relative">
-              <div className="rounded-[2.5rem] overflow-hidden shadow-xl aspect-square">
+            <div className="relative mt-8 md:mt-0 px-4 md:px-0">
+              <div className="rounded-[2rem] md:rounded-[2.5rem] overflow-hidden shadow-xl aspect-square">
                 <img src="https://cdn.poehali.dev/projects/240a6363-8506-4999-a5c6-fa3c28c59bb8/bucket/99bbdcb0-2a50-4f97-b31d-c81f75bf9be2.JPG" alt="Кабинет DENU" className="w-full h-full object-cover" />
               </div>
-              <div className="absolute -bottom-6 -right-6 w-32 h-32 rounded-[2rem] gradient-mint opacity-70 animate-float-delay" />
-              <div className="absolute -top-6 -left-6 w-20 h-20 rounded-2xl bg-denu-pink-light border-4 border-white shadow-lg flex items-center justify-center text-3xl">🩷</div>
+              <div className="absolute -bottom-3 -right-1 md:-bottom-6 md:-right-6 w-20 h-20 md:w-32 md:h-32 rounded-[1.5rem] md:rounded-[2rem] gradient-mint opacity-70 animate-float-delay" />
+              <div className="absolute -top-3 -left-1 md:-top-6 md:-left-6 w-14 h-14 md:w-20 md:h-20 rounded-xl md:rounded-2xl bg-denu-pink-light border-4 border-white shadow-lg flex items-center justify-center text-2xl md:text-3xl">🩷</div>
             </div>
           </div>
         </div>
@@ -225,48 +225,52 @@ export default function Index() {
             <p className="text-denu-mint-deep font-semibold text-sm uppercase tracking-widest mb-3">Прайс</p>
             <h2 className="font-display text-4xl md:text-5xl font-semibold text-denu-dark">Стоимость</h2>
           </div>
-          <div className="gradient-pink rounded-3xl p-8 text-white text-center mb-8 shadow-xl relative overflow-hidden">
+          <div className="gradient-pink rounded-3xl p-5 sm:p-8 text-white text-center mb-8 shadow-xl relative overflow-hidden">
             <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-white/10 -translate-y-1/2 translate-x-1/2" />
             <p className="text-white/70 font-semibold text-sm uppercase tracking-widest mb-2">Специальное предложение</p>
-            <h3 className="font-display text-3xl md:text-4xl font-semibold mb-2">Подмышки + маска Darling</h3>
-            <p className="text-white/70 mb-4">Только для новых клиентов · Первый визит</p>
-            <p className="font-display text-6xl font-semibold mb-6">490 ₽</p>
-            <a href={OFFER_TG_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold bg-white text-denu-pink hover:bg-denu-pink-light transition-colors shadow-md">
+            <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold mb-2">Подмышки + маска Darling</h3>
+            <p className="text-white/70 mb-4 text-sm sm:text-base">Только для новых клиентов · Первый визит</p>
+            <p className="font-display text-5xl sm:text-6xl font-semibold mb-6">490 ₽</p>
+            <a href={OFFER_TG_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-semibold bg-white text-denu-pink hover:bg-denu-pink-light transition-colors shadow-md text-sm sm:text-base">
               Записаться на акцию <Icon name="ArrowRight" size={18} />
             </a>
           </div>
           <div className="bg-white rounded-3xl border border-denu-mint/20 overflow-hidden shadow-sm mb-5">
-            <div className="px-5 pt-5 pb-2">
+            <div className="px-4 sm:px-5 pt-4 sm:pt-5 pb-2">
               <p className="font-display text-xl font-semibold text-denu-dark mb-1">Отдельные зоны</p>
             </div>
-            <table className="w-full">
-              <tbody>
-                {servicesZones.map((s) => (
-                  <tr key={s.zone} className={`border-b border-denu-mint/5 last:border-0 hover:bg-denu-pink-light/20 transition-colors ${s.popular ? "bg-denu-pink-light/30" : ""}`}>
-                    <td className="p-4 md:p-5 font-medium text-denu-dark flex items-center gap-2">
-                      {s.popular && <span className="text-xs font-semibold text-denu-pink bg-denu-pink-light rounded-full px-2 py-0.5">хит</span>}
-                      {s.zone}
-                    </td>
-                    <td className="p-4 md:p-5 text-right font-display font-semibold text-lg text-denu-pink">{s.price}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-[300px]">
+                <tbody>
+                  {servicesZones.map((s) => (
+                    <tr key={s.zone} className={`border-b border-denu-mint/5 last:border-0 hover:bg-denu-pink-light/20 transition-colors ${s.popular ? "bg-denu-pink-light/30" : ""}`}>
+                      <td className="p-3 sm:p-4 md:p-5 font-medium text-denu-dark flex items-center gap-2 text-sm sm:text-base">
+                        {s.popular && <span className="text-xs font-semibold text-denu-pink bg-denu-pink-light rounded-full px-2 py-0.5 shrink-0">хит</span>}
+                        {s.zone}
+                      </td>
+                      <td className="p-3 sm:p-4 md:p-5 text-right font-display font-semibold text-base sm:text-lg text-denu-pink whitespace-nowrap">{s.price}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
           <div className="bg-white rounded-3xl border border-denu-mint/20 overflow-hidden shadow-sm">
-            <div className="px-5 pt-5 pb-2">
+            <div className="px-4 sm:px-5 pt-4 sm:pt-5 pb-2">
               <p className="font-display text-xl font-semibold text-denu-dark mb-1">Сеты</p>
             </div>
-            <table className="w-full">
-              <tbody>
-                {servicesSets.map((s) => (
-                  <tr key={s.zone} className="border-b border-denu-mint/5 last:border-0 hover:bg-denu-mint-light/30 transition-colors">
-                    <td className="p-4 md:p-5 font-medium text-denu-dark">{s.zone}</td>
-                    <td className="p-4 md:p-5 text-right font-display font-semibold text-lg text-denu-pink whitespace-nowrap">{s.price}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-[300px]">
+                <tbody>
+                  {servicesSets.map((s) => (
+                    <tr key={s.zone} className="border-b border-denu-mint/5 last:border-0 hover:bg-denu-mint-light/30 transition-colors">
+                      <td className="p-3 sm:p-4 md:p-5 font-medium text-denu-dark text-sm sm:text-base">{s.zone}</td>
+                      <td className="p-3 sm:p-4 md:p-5 text-right font-display font-semibold text-base sm:text-lg text-denu-pink whitespace-nowrap">{s.price}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
           <p className="text-center text-denu-dark/40 text-sm mt-4">* Цены указаны за один сеанс.</p>
         </div>
@@ -313,7 +317,7 @@ export default function Index() {
             <h2 className="font-display text-4xl md:text-5xl font-semibold text-denu-dark">Дофаминовый<br /><em className="not-italic text-denu-pink">интерьер</em></h2>
             <p className="text-denu-dark/50 mt-3 text-lg">Каждая деталь создана для удовольствия</p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
             {[
               { emoji: "🎈", title: "Ресепшн из розовых шариков", desc: "Атмосфера праздника с первого шага" },
               { emoji: "🤳", title: "Инстаграмные раздевалки", desc: "Раздевалки созданы для крутых фото и сторис" },
@@ -448,7 +452,7 @@ export default function Index() {
                 </a>
               ))}
             </div>
-            <div className="gradient-pink rounded-3xl p-8 text-center shadow-2xl relative overflow-hidden">
+            <div className="gradient-pink rounded-3xl p-5 sm:p-8 text-center shadow-2xl relative overflow-hidden">
               <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full bg-white/10" />
               <div className="absolute -bottom-6 -left-6 w-20 h-20 rounded-full bg-white/5" />
               <div className="relative">
@@ -475,7 +479,7 @@ export default function Index() {
             <span className="font-display text-lg font-semibold text-denu-pink">DENU</span>
             <span>© 2024 · Лазерная эпиляция в Рязани</span>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-4">
             <a href="https://t.me/denulazerrzn" target="_blank" rel="noopener noreferrer" className="hover:text-denu-pink transition-colors">Telegram</a>
             <a href="https://vk.com/denulaser_rzn" target="_blank" rel="noopener noreferrer" className="hover:text-denu-pink transition-colors">ВКонтакте</a>
             <a href="tel:+79308709999" className="hover:text-denu-pink transition-colors">+7 (930) 870-99-99</a>
