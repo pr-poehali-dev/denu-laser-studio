@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import Icon from "@/components/ui/icon";
 
 const BOOKING_URL = "https://n2083629.yclients.com/";
+const OFFER_TG_URL = "https://t.me/denulazer?text=Здравствуйте! Запишите меня на оффер «Подмышки + масочка Darling за 490р»";
+const TG_URL = "https://t.me/denulazer?text=Здравствуйте! Запишите меня лазер";
 
 const navLinks = [
   { label: "Услуги", href: "#services" },
@@ -129,7 +131,7 @@ export default function Index() {
             <p className="text-lg md:text-xl text-denu-dark/60 mb-8 max-w-md leading-relaxed">
               Диодный лазер с охлаждением · Мастера с мед. образованием · Дофаминовый интерьер
             </p>
-            <a href="https://t.me/denulazer" target="_blank" rel="noopener noreferrer" className="inline-flex flex-col sm:flex-row items-start sm:items-center gap-4 bg-white rounded-2xl p-5 shadow-lg border border-denu-pink/10 mb-8 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 group">
+            <a href={OFFER_TG_URL} target="_blank" rel="noopener noreferrer" className="inline-flex flex-col sm:flex-row items-start sm:items-center gap-4 bg-white rounded-2xl p-5 shadow-lg border border-denu-pink/10 mb-8 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 group">
               <div className="text-3xl">🩷</div>
               <div>
                 <p className="text-xs text-denu-dark/50 uppercase tracking-widest font-body mb-1">Оффер для новых клиентов</p>
@@ -143,7 +145,7 @@ export default function Index() {
                 Записаться за 490 ₽
                 <Icon name="ArrowRight" size={18} />
               </a>
-              <a href="#services" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold bg-denu-pink-light border border-denu-pink/20 text-base hover:bg-denu-pink-soft transition-colors text-denu-pink">
+              <a href="#price" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold bg-denu-pink-light border border-denu-pink/20 text-base hover:bg-denu-pink-soft transition-colors text-denu-pink">
                 Все услуги
               </a>
             </div>
@@ -229,7 +231,7 @@ export default function Index() {
             <h3 className="font-display text-3xl md:text-4xl font-semibold mb-2">Подмышки + маска Darling</h3>
             <p className="text-white/70 mb-4">Только для новых клиентов · Первый визит</p>
             <p className="font-display text-6xl font-semibold mb-6">490 ₽</p>
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold bg-white text-denu-pink hover:bg-denu-pink-light transition-colors shadow-md">
+            <a href={OFFER_TG_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold bg-white text-denu-pink hover:bg-denu-pink-light transition-colors shadow-md">
               Записаться на акцию <Icon name="ArrowRight" size={18} />
             </a>
           </div>
@@ -344,6 +346,24 @@ export default function Index() {
                 <p className="text-denu-dark/55 text-sm leading-relaxed">{p.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA BLOCK */}
+      <section className="section-padding bg-denu-pink-light">
+        <div className="max-w-2xl mx-auto text-center">
+          <h2 className="font-display text-3xl md:text-4xl font-semibold text-denu-dark mb-3">Готова записаться?</h2>
+          <p className="text-denu-dark/60 mb-8">Онлайн за пару кликов или напиши нам в Telegram — ответим быстро</p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-white gradient-pink text-base hover:opacity-90 transition-opacity shadow-lg">
+              <Icon name="CalendarCheck" size={18} />
+              Онлайн-запись
+            </a>
+            <a href={TG_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold bg-white border border-denu-pink/20 text-denu-pink text-base hover:bg-white/80 transition-colors shadow-sm">
+              <Icon name="Send" size={18} />
+              Написать в Telegram
+            </a>
           </div>
         </div>
       </section>
