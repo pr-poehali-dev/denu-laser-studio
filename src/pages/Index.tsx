@@ -465,7 +465,7 @@ export default function Index() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-denu-dark/40">
           <div className="flex items-center gap-2">
             <span className="font-display text-lg font-semibold text-denu-pink">DENU</span>
-            <span>© 2024 · Лазерная эпиляция в Рязани</span>
+            <span>© 2026 · Лазерная эпиляция, Рязань</span>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <a href="https://t.me/denulazerrzn" target="_blank" rel="noopener noreferrer" className="hover:text-denu-pink transition-colors">Telegram</a>
