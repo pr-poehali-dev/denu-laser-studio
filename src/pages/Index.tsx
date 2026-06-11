@@ -384,7 +384,7 @@ export default function Index() {
               <div className="overflow-hidden rounded-2xl border border-denu-pink/10 shadow-sm w-full lg:w-[560px] h-[800px]">
                 <iframe
                   style={{ width: "100%", height: "100%", border: "none", boxSizing: "border-box" }}
-                  src="https://yandex.ru/maps-reviews-widget/219018756136?comments"
+                  src="https://yandex.ru/maps-reviews-widget/186239162108?comments"
                   title="Отзывы на Яндекс Картах"
                 />
               </div>
