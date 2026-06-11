@@ -379,24 +379,35 @@ export default function Index() {
             <p className="text-denu-pink font-semibold text-sm uppercase tracking-widest mb-3">Отзывы</p>
             <h2 className="font-display text-4xl md:text-5xl font-semibold text-denu-dark">Что говорят клиенты</h2>
           </div>
-          <div className="grid sm:grid-cols-2 gap-5">
-            {reviews.map((r) => (
-              <div key={r.name} className="bg-white rounded-2xl p-6 border border-denu-pink/10 hover:shadow-md transition-shadow">
-                <div className="flex items-center gap-1 mb-4">
-                  {Array.from({ length: r.rating }).map((_, i) => (
-                    <span key={i} className="text-denu-pink text-base">★</span>
-                  ))}
-                </div>
-                <p className="text-denu-dark/70 leading-relaxed mb-5 text-sm">{r.text}</p>
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full bg-denu-pink-light flex items-center justify-center text-sm font-semibold text-denu-pink">{r.name[0]}</div>
-                  <div>
-                    <p className="font-semibold text-denu-dark text-sm">{r.name}</p>
-                    <p className="text-xs text-denu-dark/40">{r.age}</p>
+          <div className="flex flex-col lg:flex-row gap-8 items-start">
+            <div className="w-full lg:w-auto shrink-0" style={{ width: undefined }}>
+              <div className="overflow-hidden rounded-2xl border border-denu-pink/10 shadow-sm w-full lg:w-[560px] h-[800px]">
+                <iframe
+                  style={{ width: "100%", height: "100%", border: "none", boxSizing: "border-box" }}
+                  src="https://yandex.ru/maps-reviews-widget/219018756136?comments"
+                  title="Отзывы на Яндекс Картах"
+                />
+              </div>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-5 flex-1">
+              {reviews.map((r) => (
+                <div key={r.name} className="bg-white rounded-2xl p-6 border border-denu-pink/10 hover:shadow-md transition-shadow">
+                  <div className="flex items-center gap-1 mb-4">
+                    {Array.from({ length: r.rating }).map((_, i) => (
+                      <span key={i} className="text-denu-pink text-base">★</span>
+                    ))}
+                  </div>
+                  <p className="text-denu-dark/70 leading-relaxed mb-5 text-sm">{r.text}</p>
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-full bg-denu-pink-light flex items-center justify-center text-sm font-semibold text-denu-pink">{r.name[0]}</div>
+                    <div>
+                      <p className="font-semibold text-denu-dark text-sm">{r.name}</p>
+                      <p className="text-xs text-denu-dark/40">{r.age}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
