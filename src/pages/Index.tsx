@@ -1,5 +1,53 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Icon from "@/components/ui/icon";
+
+const videos = [
+  "https://cdn.poehali.dev/projects/240a6363-8506-4999-a5c6-fa3c28c59bb8/bucket/13b738cd-5878-42f2-9b42-e9be196ef822.MOV",
+  "https://cdn.poehali.dev/projects/240a6363-8506-4999-a5c6-fa3c28c59bb8/bucket/04af2b3d-f07d-4148-800a-dbfeac7002f3.MOV",
+  "https://cdn.poehali.dev/projects/240a6363-8506-4999-a5c6-fa3c28c59bb8/bucket/b1e84477-3aee-4e32-bc37-f6c7867ddfeb.MOV",
+];
+
+function VideoCarousel() {
+  const [active, setActive] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.load();
+      videoRef.current.play().catch(() => {});
+    }
+  }, [active]);
+
+  const prev = () => setActive((a) => (a - 1 + videos.length) % videos.length);
+  const next = () => setActive((a) => (a + 1) % videos.length);
+
+  return (
+    <div className="relative flex flex-col items-center gap-4">
+      <div className="relative w-full max-w-sm mx-auto rounded-3xl overflow-hidden bg-black shadow-lg aspect-[9/16]">
+        <video
+          ref={videoRef}
+          src={videos[active]}
+          className="w-full h-full object-cover"
+          autoPlay
+          muted
+          playsInline
+          loop
+        />
+        <button onClick={prev} className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full w-9 h-9 flex items-center justify-center shadow transition">
+          <Icon name="ChevronLeft" size={20} />
+        </button>
+        <button onClick={next} className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full w-9 h-9 flex items-center justify-center shadow transition">
+          <Icon name="ChevronRight" size={20} />
+        </button>
+      </div>
+      <div className="flex gap-2">
+        {videos.map((_, i) => (
+          <button key={i} onClick={() => setActive(i)} className={`w-2 h-2 rounded-full transition-all ${i === active ? "bg-denu-pink w-5" : "bg-denu-pink/30"}`} />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 const BOOKING_URL = "https://n2083629.yclients.com/";
 const OFFER_TG_URL = "https://t.me/denulazer?text=Здравствуйте! Запишите меня на оффер «Подмышки + масочка Darling за 490р»";
@@ -317,7 +365,7 @@ export default function Index() {
             <h2 className="font-display text-4xl md:text-5xl font-semibold text-denu-dark">Дофаминовый<br /><em className="not-italic text-denu-pink">интерьер</em></h2>
             <p className="text-denu-dark/50 mt-3 text-lg">Каждая деталь создана для удовольствия</p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 mb-10">
             {[
               { emoji: "🎈", title: "Ресепшн из розовых шариков", desc: "Атмосфера праздника с первого шага" },
               { emoji: "🤳", title: "Инстаграмные раздевалки", desc: "Раздевалки созданы для крутых фото и сторис" },
@@ -331,6 +379,7 @@ export default function Index() {
               </div>
             ))}
           </div>
+          <VideoCarousel />
         </div>
       </section>
 
