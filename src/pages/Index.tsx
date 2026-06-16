@@ -179,7 +179,7 @@ export default function Index() {
             <p className="text-lg md:text-xl text-denu-dark/60 mb-8 max-w-md leading-relaxed">
               Диодный лазер с охлаждением · Мастера с мед. образованием · Дофаминовый интерьер
             </p>
-            <a href={OFFER_TG_URL} target="_blank" rel="noopener noreferrer" className="inline-flex flex-col sm:flex-row items-start sm:items-center gap-4 bg-white rounded-2xl p-5 shadow-lg border border-denu-pink/10 mb-8 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 group">
+            <a href="https://n2100750.yclients.com" target="_blank" rel="noopener noreferrer" className="inline-flex flex-col sm:flex-row items-start sm:items-center gap-4 bg-white rounded-2xl p-5 shadow-lg border border-denu-pink/10 mb-8 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 group">
               <div className="text-3xl">🩷</div>
               <div>
                 <p className="text-xs text-denu-dark/50 uppercase tracking-widest font-body mb-1">Оффер для новых клиентов</p>
