@@ -49,7 +49,7 @@ function VideoCarousel() {
   );
 }
 
-const BOOKING_URL = "https://n2083629.yclients.com/";
+const BOOKING_URL = "https://n2100750.yclients.com";
 const OFFER_TG_URL = "https://t.me/denulazer?text=Здравствуйте!💖%20Запишите%20меня%20на%20«Подмышки%20+%20масочка%20Darling\"%20за%20490р";
 const TG_URL = "https://t.me/denulazer?text=Здравствуйте!💖%20Запишите%20меня%20на%20«Подмышки%20+%20масочка%20Darling\"%20за%20490р";
 
