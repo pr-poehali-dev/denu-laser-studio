@@ -189,10 +189,7 @@ export default function Index() {
               <Icon name="Send" size={18} className="text-denu-pink/40 group-hover:text-denu-pink transition-colors ml-auto hidden sm:block" />
             </a>
             <div className="flex flex-col sm:flex-row gap-3">
-              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-white gradient-pink text-base hover:opacity-90 transition-opacity shadow-lg">
-                Записаться за 490 ₽
-                <Icon name="ArrowRight" size={18} />
-              </a>
+              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-white gradient-pink text-base hover:opacity-90 transition-opacity shadow-lg">Записаться по акции онлайн</a>
               <a href="#price" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold bg-denu-pink-light border border-denu-pink/20 text-base hover:bg-denu-pink-soft transition-colors text-denu-pink">
                 Все услуги
               </a>
