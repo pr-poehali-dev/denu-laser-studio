@@ -59,12 +59,14 @@ export default function BookingFormDialog({
   const [comment, setComment] = useState("");
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [phoneError, setPhoneError] = useState(false);
 
   const reset = () => {
     setName("");
     setPhone("");
     setComment("");
     setSubmitted(false);
+    setPhoneError(false);
   };
 
   const handleClose = (next: boolean) => {
@@ -74,7 +76,13 @@ export default function BookingFormDialog({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name.trim() || !phone.trim()) return;
+    const digits = phone.replace(/\D/g, "");
+    if (digits.length !== 11) {
+      setPhoneError(true);
+      return;
+    }
+    setPhoneError(false);
+    if (!name.trim()) return;
     setLoading(true);
     try {
       await fetch(APPS_SCRIPT_URL, {
@@ -108,11 +116,13 @@ export default function BookingFormDialog({
                   id="phone"
                   type="tel"
                   value={phone}
-                  onChange={(e) => setPhone(formatPhone(e.target.value))}
+                  onChange={(e) => { setPhone(formatPhone(e.target.value)); if (phoneError) setPhoneError(false); }}
                   onFocus={() => { if (!phone) setPhone("+7 "); }}
                   placeholder="+7 (___) ___-__-__"
+                  className={phoneError ? "border-destructive focus-visible:ring-destructive" : undefined}
                   required
                 />
+                {phoneError && <p className="text-xs text-destructive">Введите номер телефона полностью</p>}
               </div>
               <div className="flex flex-col gap-1.5">
                 <Label htmlFor="comment">Комментарий</Label>
