@@ -13,7 +13,7 @@ import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
 
 const APPS_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbyfTkMi02ReVSLovstftiEB5BnMEjWp10eDhFN39QlNFqPy1HTfSe24IdBml41NNd88/exec";
+  "https://script.google.com/macros/s/AKfycby3GynJrSH5Z7_DgmX8H0jfHWf496L3tiNFG0jw49nJYR3mvlGr9DJu2jXcE581JF1jNw/exec";
 
 const SOCIALS = [
   { icon: "MessageCircle" as const, label: "ВКонтакте", href: "https://vk.ru/denulaser_rzn" },
