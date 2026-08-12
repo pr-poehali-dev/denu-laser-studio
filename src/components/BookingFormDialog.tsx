@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Dialog,
   DialogContent,
@@ -95,6 +96,12 @@ export default function BookingFormDialog({
               <Button type="submit" disabled={loading} className="gradient-pink text-white hover:opacity-90 mt-1">
                 {loading ? "Отправляем..." : "Отправить заявку"}
               </Button>
+              <p className="text-xs text-denu-dark/40 text-center leading-relaxed">
+                Отправляя форму, вы соглашаетесь с{" "}
+                <Link to="/offer" target="_blank" className="underline hover:text-denu-pink transition-colors">публичной офертой</Link>{" "}
+                и{" "}
+                <Link to="/privacy" target="_blank" className="underline hover:text-denu-pink transition-colors">политикой обработки персональных данных</Link>
+              </p>
             </form>
           </>
         ) : (

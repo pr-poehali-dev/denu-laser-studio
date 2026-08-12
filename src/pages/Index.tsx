@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 import BookingFormDialog from "@/components/BookingFormDialog";
 
@@ -520,6 +521,8 @@ export default function Index() {
             <a href="https://t.me/denulazerrzn" target="_blank" rel="noopener noreferrer" className="hover:text-denu-pink transition-colors">Telegram</a>
             <a href="https://vk.com/denulaser_rzn" target="_blank" rel="noopener noreferrer" className="hover:text-denu-pink transition-colors">ВКонтакте</a>
             <a href="tel:+79308709999" className="hover:text-denu-pink transition-colors">+7 (930) 870-99-99</a>
+            <Link to="/offer" className="hover:text-denu-pink transition-colors">Оферта</Link>
+            <Link to="/privacy" className="hover:text-denu-pink transition-colors">Политика данных</Link>
           </div>
         </div>
       </footer>
