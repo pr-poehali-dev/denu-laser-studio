@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import Icon from "@/components/ui/icon";
+import BookingFormDialog from "@/components/BookingFormDialog";
 
 const videos = [
   "https://cdn.poehali.dev/projects/240a6363-8506-4999-a5c6-fa3c28c59bb8/bucket/13b738cd-5878-42f2-9b42-e9be196ef822.MOV",
@@ -115,6 +116,8 @@ export default function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [scrolled, setScrolled] = useState(false);
+  const [bookingOpen, setBookingOpen] = useState(false);
+  const [bookingSource, setBookingSource] = useState("Записаться");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -138,9 +141,9 @@ export default function Index() {
             ))}
           </nav>
           <div className="flex items-center gap-3">
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white gradient-pink hover:opacity-90 transition-opacity shadow-md">
+            <button onClick={() => { setBookingSource("Шапка сайта — Записаться"); setBookingOpen(true); }} className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white gradient-pink hover:opacity-90 transition-opacity shadow-md">
               Записаться
-            </a>
+            </button>
             <button className="lg:hidden p-2 rounded-full hover:bg-denu-pink-light transition-colors" onClick={() => setMenuOpen(!menuOpen)}>
               <Icon name={menuOpen ? "X" : "Menu"} size={22} className="text-denu-pink" />
             </button>
@@ -153,9 +156,9 @@ export default function Index() {
                 <a key={l.href} href={l.href} className="text-base text-denu-dark/80 hover:text-denu-pink transition-colors" onClick={() => setMenuOpen(false)}>{l.label}</a>
               ))}
             </nav>
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="mt-5 flex items-center justify-center gap-2 px-5 py-3 rounded-full font-semibold text-white gradient-pink" onClick={() => setMenuOpen(false)}>
+            <button onClick={() => { setMenuOpen(false); setBookingSource("Мобильное меню — Записаться онлайн"); setBookingOpen(true); }} className="mt-5 flex items-center justify-center gap-2 px-5 py-3 rounded-full font-semibold text-white gradient-pink w-full">
               Записаться онлайн
-            </a>
+            </button>
           </div>
         )}
       </header>
@@ -179,7 +182,7 @@ export default function Index() {
             <p className="text-lg md:text-xl text-denu-dark/60 mb-8 max-w-md leading-relaxed">
               Диодный лазер с охлаждением · Мастера с мед. образованием · Дофаминовый интерьер
             </p>
-            <a href="https://n2100750.yclients.com" target="_blank" rel="noopener noreferrer" className="inline-flex flex-col sm:flex-row items-start sm:items-center gap-4 bg-white rounded-2xl p-5 shadow-lg border border-denu-pink/10 mb-8 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 group">
+            <button onClick={() => { setBookingSource("Оффер для новых клиентов"); setBookingOpen(true); }} className="inline-flex flex-col sm:flex-row items-start sm:items-center gap-4 bg-white rounded-2xl p-5 shadow-lg border border-denu-pink/10 mb-8 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 group w-full sm:w-auto text-left">
               <div className="text-3xl">🩷</div>
               <div>
                 <p className="text-xs text-denu-dark/50 uppercase tracking-widest font-body mb-1">Оффер для новых клиентов</p>
@@ -187,9 +190,9 @@ export default function Index() {
                 <p className="font-bold text-2xl mt-0.5 text-denu-pink">490 ₽</p>
               </div>
               <Icon name="Send" size={18} className="text-denu-pink/40 group-hover:text-denu-pink transition-colors ml-auto hidden sm:block" />
-            </a>
+            </button>
             <div className="flex flex-col sm:flex-row gap-3">
-              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-white gradient-pink text-base hover:opacity-90 transition-opacity shadow-lg">Записаться по акции онлайн</a>
+              <button onClick={() => { setBookingSource("Записаться по акции онлайн"); setBookingOpen(true); }} className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-white gradient-pink text-base hover:opacity-90 transition-opacity shadow-lg">Записаться по акции онлайн</button>
               <a href="#price" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold bg-denu-pink-light border border-denu-pink/20 text-base hover:bg-denu-pink-soft transition-colors text-denu-pink">
                 Все услуги
               </a>
@@ -527,6 +530,14 @@ export default function Index() {
           100% { transform: translateX(-50%); }
         }
       `}</style>
+
+      <BookingFormDialog
+        open={bookingOpen}
+        onOpenChange={setBookingOpen}
+        source={bookingSource}
+        destinationUrl={BOOKING_URL}
+        destinationLabel="Перейти к онлайн-записи"
+      />
 
     </div>
   );
