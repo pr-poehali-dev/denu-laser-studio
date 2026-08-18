@@ -187,7 +187,7 @@ export default function Index() {
               <div className="text-3xl">🩷</div>
               <div>
                 <p className="text-xs text-denu-dark/50 uppercase tracking-widest font-body mb-1">Оффер для новых клиентов</p>
-                <p className="font-display text-xl font-semibold text-denu-dark">Подмышки + маска Darling</p>
+                <p className="font-display text-xl font-semibold text-denu-dark">Подмышки + лимонад DENU fizz</p>
                 <p className="font-bold text-2xl mt-0.5 text-denu-pink">490 ₽</p>
               </div>
               <Icon name="Send" size={18} className="text-denu-pink/40 group-hover:text-denu-pink transition-colors ml-auto hidden sm:block" />
