@@ -401,11 +401,14 @@ export default function Index() {
               </div>
             ))}
           </div>
-          <div className="mt-8 gradient-pink rounded-2xl p-6 text-center text-white shadow-md">
+          <button
+            onClick={() => { setBookingSource("Приведи подругу"); setBookingOpen(true); }}
+            className="mt-8 w-full gradient-pink rounded-2xl p-6 text-center text-white shadow-md hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200"
+          >
             <p className="font-semibold text-base sm:text-lg leading-relaxed">
               👯 Приведи подругу и выбирайте любую позицию Pusy для себя и подруги
             </p>
-          </div>
+          </button>
         </div>
       </section>
 
