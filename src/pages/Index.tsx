@@ -277,7 +277,7 @@ export default function Index() {
           <div className="gradient-pink rounded-3xl p-5 sm:p-8 text-white text-center mb-8 shadow-xl relative overflow-hidden">
             <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-white/10 -translate-y-1/2 translate-x-1/2" />
             <p className="text-white/70 font-semibold text-sm uppercase tracking-widest mb-2">Специальное предложение</p>
-            <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold mb-2">Подмышки + маска Darling</h3>
+            <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold mb-2">Подмышки + лимонад DENU fizz</h3>
             <p className="text-white/70 mb-4 text-sm sm:text-base">Только для новых клиентов · Первый визит</p>
             <p className="font-display text-5xl sm:text-6xl font-semibold mb-6">490 ₽</p>
             <a href={OFFER_TG_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-semibold bg-white text-denu-pink hover:bg-denu-pink-light transition-colors shadow-md text-sm sm:text-base">
