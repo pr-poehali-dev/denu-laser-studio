@@ -496,7 +496,8 @@ export default function Index() {
               <div className="relative">
                 <p className="text-4xl mb-4">🩷</p>
                 <h3 className="font-display text-2xl md:text-3xl font-semibold text-white mb-3">Первый визит за 490 ₽</h3>
-                <p className="text-white/70 mb-6 text-sm leading-relaxed">Подмышки + маска Darling в подарок.<br />Записывайся прямо сейчас!</p>
+                <p className="text-white/70 mb-6 text-sm leading-relaxed">Подмышки + лимонад DENU fizz в подарок.
+Записывайся прямо сейчас!</p>
                 <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold bg-white text-denu-pink hover:bg-denu-pink-light transition-colors shadow-md text-sm">
                   Записаться онлайн <Icon name="ArrowRight" size={16} />
                 </a>
