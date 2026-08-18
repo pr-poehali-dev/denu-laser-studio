@@ -92,7 +92,7 @@ const team = [
 ];
 
 const perks = [
-  { icon: "🎁", title: "Маска Darling", desc: "Дарим розовую маску Darling за первый визит" },
+  { icon: "🎁", title: "Любая позиция Pusy в подарок", desc: "Дарим позицию из зоны косметики Pusy за первый визит" },
   { icon: "🥤", title: "Лимонад DENU Fizz", desc: "Освежающий лимонад в подарок после каждой процедуры" },
   { icon: "💎", title: "Бьютисы", desc: "Собирай уровни и получай плюшки от студии" },
 ];
@@ -400,6 +400,11 @@ export default function Index() {
                 <p className="text-denu-dark/55 text-sm leading-relaxed">{p.desc}</p>
               </div>
             ))}
+          </div>
+          <div className="mt-8 gradient-pink rounded-2xl p-6 text-center text-white shadow-md">
+            <p className="font-semibold text-base sm:text-lg leading-relaxed">
+              👯 Приведи подругу и выбирайте любую позицию Pusy для себя и подруги
+            </p>
           </div>
         </div>
       </section>
