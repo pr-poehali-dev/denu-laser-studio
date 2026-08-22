@@ -9,12 +9,12 @@ export const OFFER_TG_URL = "https://t.me/denulazer?text=Здравствуйт�
 export const TG_URL = "https://t.me/denulazer?text=Здравствуйте!💖%20Запишите%20меня%20на%20«Подмышки%20и%20масочка%20Darling\"%20за%20490р";
 
 export const servicesZones = [
-  { zone: "Подмышки", price: "790 ₽", popular: false },
-  { zone: "Классическое бикини", price: "1 390 ₽", popular: false },
-  { zone: "Глубокое бикини", price: "2 690 ₽", popular: true },
-  { zone: "Ноги полностью", price: "4 600 ₽", popular: false },
-  { zone: "Голени", price: "2 990 ₽", popular: false },
-  { zone: "Бёдра", price: "2 790 ₽", popular: false },
+  { zone: "Подмышки", price: "790 ₽", popular: false, slug: "podmyshki" },
+  { zone: "Классическое бикини", price: "1 390 ₽", popular: false, slug: "bikini" },
+  { zone: "Глубокое бикини", price: "2 690 ₽", popular: true, slug: "bikini" },
+  { zone: "Ноги полностью", price: "4 600 ₽", popular: false, slug: "nogi" },
+  { zone: "Голени", price: "2 990 ₽", popular: false, slug: "nogi" },
+  { zone: "Бёдра", price: "2 790 ₽", popular: false, slug: "nogi" },
   { zone: "Руки до локтя", price: "1 590 ₽", popular: false },
   { zone: "Руки полностью", price: "2 900 ₽", popular: false },
   { zone: "Линия живота", price: "850 ₽", popular: false },
@@ -22,9 +22,9 @@ export const servicesZones = [
 ];
 
 export const servicesSets = [
-  { zone: "Подмышки + глубокое бикини", price: "3 100 ₽" },
-  { zone: "Подмышки + глубокое бикини + голени / бёдра", price: "4 800 ₽" },
-  { zone: "Подмышки + глубокое бикини + ноги полностью", price: "6 100 ₽" },
+  { zone: "Подмышки + глубокое бикини", price: "3 100 ₽", slug: "sety" },
+  { zone: "Подмышки + глубокое бикини + голени / бёдра", price: "4 800 ₽", slug: "sety" },
+  { zone: "Подмышки + глубокое бикини + ноги полностью", price: "6 100 ₽", slug: "sety" },
 ];
 
 export const team = [

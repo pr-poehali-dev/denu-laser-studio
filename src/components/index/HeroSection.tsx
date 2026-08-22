@@ -1,13 +1,13 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 import { OFFER_TG_URL, servicesSets, servicesZones } from "@/components/index/data";
-import { services } from "@/components/services/servicesData";
 
 interface HeroSectionProps {
   openBooking: (source: string) => void;
 }
 
 export default function HeroSection({ openBooking }: HeroSectionProps) {
+  const navigate = useNavigate();
   return (
     <>
       {/* HERO */}
@@ -138,7 +138,11 @@ export default function HeroSection({ openBooking }: HeroSectionProps) {
               <table className="w-full min-w-[300px]">
                 <tbody>
                   {servicesSets.map((s) => (
-                    <tr key={s.zone} className="border-b border-denu-mint/5 last:border-0 hover:bg-denu-mint-light/30 transition-colors">
+                    <tr
+                      key={s.zone}
+                      onClick={() => s.slug && navigate(`/uslugi/${s.slug}`)}
+                      className={`border-b border-denu-mint/5 last:border-0 hover:bg-denu-mint-light/30 transition-colors ${s.slug ? "cursor-pointer" : ""}`}
+                    >
                       <td className="p-3 sm:p-4 md:p-5 font-medium text-denu-dark text-sm sm:text-base">{s.zone}</td>
                       <td className="p-3 sm:p-4 md:p-5 text-right font-display font-semibold text-base sm:text-lg text-denu-pink whitespace-nowrap">{s.price}</td>
                     </tr>
@@ -155,7 +159,11 @@ export default function HeroSection({ openBooking }: HeroSectionProps) {
               <table className="w-full min-w-[300px]">
                 <tbody>
                   {servicesZones.map((s) => (
-                    <tr key={s.zone} className={`border-b border-denu-mint/5 last:border-0 hover:bg-denu-pink-light/20 transition-colors ${s.popular ? "bg-denu-pink-light/30" : ""}`}>
+                    <tr
+                      key={s.zone}
+                      onClick={() => s.slug && navigate(`/uslugi/${s.slug}`)}
+                      className={`border-b border-denu-mint/5 last:border-0 hover:bg-denu-pink-light/20 transition-colors ${s.popular ? "bg-denu-pink-light/30" : ""} ${s.slug ? "cursor-pointer" : ""}`}
+                    >
                       <td className="p-3 sm:p-4 md:p-5 font-medium text-denu-dark flex items-center gap-2 text-sm sm:text-base">
                         {s.popular && <span className="text-xs font-semibold text-denu-pink bg-denu-pink-light rounded-full px-2 py-0.5 shrink-0">хит</span>}
                         {s.zone}
@@ -167,15 +175,7 @@ export default function HeroSection({ openBooking }: HeroSectionProps) {
               </table>
             </div>
           </div>
-          <p className="text-center text-denu-dark/40 text-sm mt-4">* Цены указаны за один сеанс.</p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
-            {services.map((s) => (
-              <Link key={s.slug} to={`/uslugi/${s.slug}`} className="bg-white rounded-2xl p-5 border border-denu-mint/20 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 text-center">
-                <p className="font-semibold text-denu-dark text-sm mb-1">Подробнее: {s.navTitle}</p>
-                <p className="text-denu-pink text-xs">Узнать больше →</p>
-              </Link>
-            ))}
-          </div>
+          <p className="text-center text-denu-dark/40 text-sm mt-4">* Цены указаны за один сеанс. Нажмите на услугу, чтобы узнать подробнее.</p>
         </div>
       </section>
     </>
