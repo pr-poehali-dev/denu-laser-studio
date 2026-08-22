@@ -1,12 +1,12 @@
 import Icon from "@/components/ui/icon";
 
 const navLinks = [
-  { label: "Услуги", href: "/#services" },
+  { label: "Цены", href: "/ceny" },
   { label: "О нас", href: "/#about" },
   { label: "Специалисты", href: "/#team" },
   { label: "Атмосфера", href: "/#atmosphere" },
   { label: "Плюшки", href: "/#perks" },
-  { label: "Прайс", href: "/#price" },
+  { label: "Блог", href: "/blog" },
   { label: "Отзывы", href: "/#reviews" },
   { label: "FAQ", href: "/#faq" },
   { label: "Контакты", href: "/#contacts" },
