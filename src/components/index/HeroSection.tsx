@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 import { OFFER_TG_URL, servicesSets, servicesZones } from "@/components/index/data";
+import { services } from "@/components/services/servicesData";
 
 interface HeroSectionProps {
   openBooking: (source: string) => void;
@@ -166,6 +168,14 @@ export default function HeroSection({ openBooking }: HeroSectionProps) {
             </div>
           </div>
           <p className="text-center text-denu-dark/40 text-sm mt-4">* Цены указаны за один сеанс.</p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
+            {services.map((s) => (
+              <Link key={s.slug} to={`/uslugi/${s.slug}`} className="bg-white rounded-2xl p-5 border border-denu-mint/20 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 text-center">
+                <p className="font-semibold text-denu-dark text-sm mb-1">Подробнее: {s.navTitle}</p>
+                <p className="text-denu-pink text-xs">Узнать больше →</p>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
     </>
