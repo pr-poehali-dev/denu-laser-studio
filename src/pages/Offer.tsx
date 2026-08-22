@@ -1,9 +1,16 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import Icon from "@/components/ui/icon";
 
 export default function Offer() {
   return (
     <div className="min-h-screen font-body text-denu-dark" style={{ background: "var(--denu-cream)" }}>
+      <Helmet>
+        <title>Публичная оферта — DENU, студия лазерной эпиляции в Рязани</title>
+        <meta name="description" content="Публичная оферта на оказание услуг лазерной эпиляции студией DENU в Рязани." />
+        <meta name="robots" content="noindex, follow" />
+        <link rel="canonical" href="https://denu-laser.ru/offer" />
+      </Helmet>
       <header className="py-5 border-b border-denu-pink/10 bg-white">
         <div className="max-w-3xl mx-auto px-4 md:px-8 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2">

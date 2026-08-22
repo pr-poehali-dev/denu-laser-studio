@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import Icon from "@/components/ui/icon";
 import BookingFormDialog from "@/components/BookingFormDialog";
 
@@ -30,6 +31,8 @@ function VideoCarousel() {
           ref={videoRef}
           src={videos[active]}
           className="w-full h-full object-cover"
+          title="Процедура лазерной эпиляции в студии DENU, Рязань"
+          aria-label="Видео процедуры лазерной эпиляции в студии DENU"
           autoPlay
           muted
           playsInline
@@ -128,6 +131,20 @@ export default function Index() {
 
   return (
     <div className="min-h-screen font-body text-denu-dark overflow-x-hidden" style={{ background: "var(--denu-cream)" }}>
+      <Helmet>
+        <link rel="canonical" href="https://denu-laser.ru/" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqItems.map((f) => ({
+              "@type": "Question",
+              name: f.q,
+              acceptedAnswer: { "@type": "Answer", text: f.a },
+            })),
+          })}
+        </script>
+      </Helmet>
 
       {/* NAV */}
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "glass shadow-sm py-3" : "py-5"}`}>
