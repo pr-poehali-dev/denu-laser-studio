@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Icon from "@/components/ui/icon";
@@ -25,6 +25,10 @@ export default function ServicePage() {
     const rest = services.filter((s) => s.slug !== service.slug);
     return [...rest].sort(() => Math.random() - 0.5).slice(0, 3);
   }, [service]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [slug]);
 
   if (!service) return <Navigate to="/" replace />;
 
@@ -79,7 +83,7 @@ export default function ServicePage() {
                 <p className="text-denu-dark/50 text-sm">{service.priceNote}</p>
               </div>
               <div className="flex flex-col sm:flex-row gap-3">
-                <button onClick={() => openBooking(`Страница услуги — ${service.navTitle}`)} className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-white gradient-pink text-base hover:opacity-90 transition-opacity shadow-lg">
+                <button onClick={() => openBooking(`Страница услуги — ${service.navTitle} (/uslugi/${service.slug})`)} className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-white gradient-pink text-base hover:opacity-90 transition-opacity shadow-lg">
                   Записаться
                 </button>
                 <Link to="/#price" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold bg-denu-pink-light border border-denu-pink/20 text-base hover:bg-denu-pink-soft transition-colors text-denu-pink">
@@ -136,7 +140,7 @@ export default function ServicePage() {
               <Icon name="CalendarCheck" size={18} />
               Онлайн-запись
             </a>
-            <button onClick={() => openBooking(`Страница услуги — ${service.navTitle}`)} className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold bg-white border border-denu-pink/20 text-denu-pink text-base hover:bg-white/80 transition-colors shadow-sm">
+            <button onClick={() => openBooking(`Страница услуги — ${service.navTitle} (/uslugi/${service.slug})`)} className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold bg-white border border-denu-pink/20 text-denu-pink text-base hover:bg-white/80 transition-colors shadow-sm">
               Оставить заявку
             </button>
           </div>
@@ -157,6 +161,31 @@ export default function ServicePage() {
                 <p className="text-denu-dark/65 text-sm leading-relaxed">{item.a}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* BOOKING */}
+      <section className="section-padding">
+        <div className="max-w-2xl mx-auto">
+          <div className="gradient-pink rounded-3xl p-6 sm:p-10 text-center shadow-xl relative overflow-hidden">
+            <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-white/10" />
+            <div className="absolute -bottom-8 -left-8 w-24 h-24 rounded-full bg-white/5" />
+            <div className="relative">
+              <p className="text-3xl mb-3">🩷</p>
+              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold text-white mb-3">
+                Запись на {service.title.toLowerCase()} {service.titleAccent}
+              </h2>
+              <p className="text-white/70 mb-6 text-sm sm:text-base">Оставьте заявку, и мы подберём удобное время визита</p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-semibold bg-white text-denu-pink hover:bg-denu-pink-light transition-colors shadow-md text-sm sm:text-base">
+                  Онлайн-запись <Icon name="ArrowRight" size={16} />
+                </a>
+                <button onClick={() => openBooking(`Страница услуги — ${service.navTitle} (/uslugi/${service.slug})`)} className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-semibold bg-white/10 border border-white/30 text-white hover:bg-white/20 transition-colors text-sm sm:text-base">
+                  Оставить заявку
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
