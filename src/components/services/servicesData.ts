@@ -1,3 +1,11 @@
+import podmyshkiImg from "@/assets/services/podmyshki.webp";
+import bikiniImg from "@/assets/services/bikini.webp";
+import nogiImg from "@/assets/services/nogi.webp";
+import setyImg from "@/assets/services/sety.webp";
+import rukiImg from "@/assets/services/ruki.webp";
+import zhivotImg from "@/assets/services/zhivot.webp";
+import yagoditsyImg from "@/assets/services/yagoditsy.webp";
+
 export interface ServiceFaq {
   q: string;
   a: string;
@@ -46,7 +54,7 @@ export const services: ServiceData[] = [
       { q: "Больно ли делать эпиляцию подмышек?", a: "Кожа в этой зоне чувствительна, но диодный лазер с охлаждением сводит дискомфорт к минимуму. Большинство клиентов описывают ощущения как лёгкое покалывание." },
       { q: "Можно ли пользоваться дезодорантом после процедуры?", a: "В первые сутки после сеанса рекомендуем воздержаться от дезодоранта, чтобы кожа успела восстановиться." },
     ],
-    image: "https://cdn.poehali.dev/projects/240a6363-8506-4999-a5c6-fa3c28c59bb8/bucket/871173b3-5c74-4356-bb1b-11382e060de6.JPG",
+    image: podmyshkiImg,
   },
   {
     slug: "bikini",
@@ -73,7 +81,7 @@ export const services: ServiceData[] = [
       { q: "Это больно?", a: "Зона чувствительная, но диодный лазер с охлаждением делает процедуру комфортной. Многие клиентки отмечают, что ощущения слабее, чем при воске." },
       { q: "Нужно ли брить зону перед процедурой?", a: "Да, за 1–2 дня до визита рекомендуем аккуратно побрить зону — так лазер будет работать эффективнее." },
     ],
-    image: "https://cdn.poehali.dev/projects/240a6363-8506-4999-a5c6-fa3c28c59bb8/bucket/99bbdcb0-2a50-4f97-b31d-c81f75bf9be2.JPG",
+    image: bikiniImg,
   },
   {
     slug: "nogi",
@@ -100,7 +108,7 @@ export const services: ServiceData[] = [
       { q: "Можно ли делать эпиляцию ног летом?", a: "Да, но при условии отсутствия свежего загара — мастер оценит состояние кожи на консультации и подберёт безопасные параметры." },
       { q: "Сколько длится процедура на ноги полностью?", a: "В среднем 40–60 минут в зависимости от индивидуальных особенностей." },
     ],
-    image: "https://cdn.poehali.dev/projects/240a6363-8506-4999-a5c6-fa3c28c59bb8/bucket/0b4a882c-d219-4575-98e2-bd0a613542e7.JPG",
+    image: nogiImg,
   },
   {
     slug: "sety",
@@ -127,7 +135,7 @@ export const services: ServiceData[] = [
       { q: "Сет дешевле, чем зоны по отдельности?", a: "Да, при выборе сета цена ниже суммарной стоимости входящих в него зон при отдельной оплате." },
       { q: "Нужно ли делать все зоны сета за один визит?", a: "Да, зоны сета обрабатываются в рамках одного визита в студию." },
     ],
-    image: "https://cdn.poehali.dev/projects/240a6363-8506-4999-a5c6-fa3c28c59bb8/bucket/78a466ca-6660-40f2-a84c-a7a807fcd96f.JPG",
+    image: setyImg,
   },
   {
     slug: "ruki",
@@ -154,7 +162,7 @@ export const services: ServiceData[] = [
       { q: "Больно ли делать эпиляцию рук?", a: "Кожа на руках менее чувствительна, чем в интимных зонах, поэтому процедура переносится легко благодаря охлаждению лазера." },
       { q: "Как часто нужно приходить на процедуру?", a: "Оптимальный интервал между сеансами — 4–8 недель, мастер подскажет точный график на консультации." },
     ],
-    image: "https://cdn.poehali.dev/projects/240a6363-8506-4999-a5c6-fa3c28c59bb8/bucket/0b4a882c-d219-4575-98e2-bd0a613542e7.JPG",
+    image: rukiImg,
   },
   {
     slug: "zhivot",
@@ -181,7 +189,7 @@ export const services: ServiceData[] = [
       { q: "Это больно?", a: "Ощущения слабые благодаря охлаждению лазера, большинство клиентов переносят процедуру легко." },
       { q: "Как подготовиться к процедуре?", a: "За 1–2 дня до визита аккуратно побрейте зону, откажитесь от загара за 2 недели до сеанса." },
     ],
-    image: "https://cdn.poehali.dev/projects/240a6363-8506-4999-a5c6-fa3c28c59bb8/bucket/99bbdcb0-2a50-4f97-b31d-c81f75bf9be2.JPG",
+    image: zhivotImg,
   },
   {
     slug: "yagoditsy",
@@ -208,7 +216,7 @@ export const services: ServiceData[] = [
       { q: "Больно ли это?", a: "Благодаря охлаждению диодного лазера дискомфорт минимален." },
       { q: "Можно ли совместить с другими зонами?", a: "Да, эту зону часто обрабатывают вместе с глубоким бикини — уточните у мастера при записи." },
     ],
-    image: "https://cdn.poehali.dev/projects/240a6363-8506-4999-a5c6-fa3c28c59bb8/bucket/78a466ca-6660-40f2-a84c-a7a807fcd96f.JPG",
+    image: yagoditsyImg,
   },
 ];
 
