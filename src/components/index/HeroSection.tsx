@@ -36,7 +36,6 @@ export default function HeroSection({ openBooking }: HeroSectionProps) {
                 <p className="font-display text-xl font-semibold text-denu-dark">Подмышки + лимонад DENU fizz</p>
                 <p className="font-bold text-2xl mt-0.5 text-denu-pink">490 ₽</p>
               </div>
-              <Icon name="Send" size={18} className="text-denu-pink/40 group-hover:text-denu-pink transition-colors ml-auto hidden sm:block" />
             </button>
             <div className="flex flex-col sm:flex-row gap-3">
               <button onClick={() => openBooking("Записаться по акции онлайн")} className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-white gradient-pink text-base hover:opacity-90 transition-opacity shadow-lg">Записаться по акции онлайн</button>
