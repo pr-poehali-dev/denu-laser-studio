@@ -46,6 +46,7 @@ export default function ServicePage() {
             provider: { "@type": "BeautySalon", name: "DENU", url: "https://denu-laser.ru/" },
             areaServed: "Рязань",
             offers: { "@type": "Offer", priceCurrency: "RUB", price: service.price.replace(/\D/g, "") },
+            aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: "100", bestRating: "5" },
           })}
         </script>
         <script type="application/ld+json">
@@ -57,6 +58,16 @@ export default function ServicePage() {
               name: f.q,
               acceptedAnswer: { "@type": "Answer", text: f.a },
             })),
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Главная", item: "https://denu-laser.ru/" },
+              { "@type": "ListItem", position: 2, name: service.navTitle, item: `https://denu-laser.ru/uslugi/${service.slug}` },
+            ],
           })}
         </script>
       </Helmet>
