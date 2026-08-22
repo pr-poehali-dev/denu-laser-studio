@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Icon from "@/components/ui/icon";
@@ -20,9 +20,13 @@ export default function ServicePage() {
     setBookingOpen(true);
   };
 
-  if (!service) return <Navigate to="/" replace />;
+  const otherServices = useMemo(() => {
+    if (!service) return [];
+    const rest = services.filter((s) => s.slug !== service.slug);
+    return [...rest].sort(() => Math.random() - 0.5).slice(0, 3);
+  }, [service]);
 
-  const otherServices = services.filter((s) => s.slug !== service.slug);
+  if (!service) return <Navigate to="/" replace />;
 
   return (
     <div className="min-h-screen font-body text-denu-dark overflow-x-hidden" style={{ background: "var(--denu-cream)" }}>
