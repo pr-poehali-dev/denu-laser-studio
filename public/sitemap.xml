@@ -26,6 +26,21 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://denu-laser.ru/uslugi/ruki</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://denu-laser.ru/uslugi/zhivot</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://denu-laser.ru/uslugi/yagoditsy</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://denu-laser.ru/offer</loc>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>

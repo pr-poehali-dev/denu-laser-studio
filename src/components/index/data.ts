@@ -15,10 +15,10 @@ export const servicesZones = [
   { zone: "Ноги полностью", price: "4 600 ₽", popular: false, slug: "nogi" },
   { zone: "Голени", price: "2 990 ₽", popular: false, slug: "nogi" },
   { zone: "Бёдра", price: "2 790 ₽", popular: false, slug: "nogi" },
-  { zone: "Руки до локтя", price: "1 590 ₽", popular: false },
-  { zone: "Руки полностью", price: "2 900 ₽", popular: false },
-  { zone: "Линия живота", price: "850 ₽", popular: false },
-  { zone: "Межъягодичная впадина", price: "1 100 ₽", popular: false },
+  { zone: "Руки до локтя", price: "1 590 ₽", popular: false, slug: "ruki" },
+  { zone: "Руки полностью", price: "2 900 ₽", popular: false, slug: "ruki" },
+  { zone: "Линия живота", price: "850 ₽", popular: false, slug: "zhivot" },
+  { zone: "Межъягодичная впадина", price: "1 100 ₽", popular: false, slug: "yagoditsy" },
 ];
 
 export const servicesSets = [
