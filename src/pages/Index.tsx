@@ -28,6 +28,8 @@ export default function Index() {
   return (
     <div className="min-h-screen font-body text-denu-dark overflow-x-hidden" style={{ background: "var(--denu-cream)" }}>
       <Helmet>
+        <title>DENU — лазерная эпиляция в Рязани, диодный лазер | Первый визит 490 ₽</title>
+        <meta name="description" content="Студия лазерной эпиляции DENU в Рязани. Диодный лазер с охлаждением, мастера с мед. образованием. Первый визит: подмышки + лимонад DENU fizz за 490 ₽. Рейтинг 5.0. Онлайн-запись." />
         <link rel="canonical" href="https://denu-laser.ru/" />
         <script type="application/ld+json">
           {JSON.stringify({
